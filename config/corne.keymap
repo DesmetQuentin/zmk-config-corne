@@ -96,9 +96,9 @@
 
         french {
             bindings = <
-&kp TAB  &trans  &trans  &trans  &trans  &trans    &kp DELETE  &trans     &kp E_ACUTE     &kp E_GRAVE  &trans         &kp DEAD_DIAERESIS
-&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &kp A_GRAVE     &kp U_GRAVE  &kp C_CEDILLA  &kp DEAD_CIRCUMFLEX
-&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans          &trans       &trans         &trans
+&kp TAB  &trans  &trans  &trans  &trans  &trans    &kp DELETE  &trans     &trans          &trans  &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans          &trans  &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans          &trans  &trans  &trans
                          &trans  &trans  &trans    &kp RETURN  &kp SPACE  &kp LEFT_SHIFT
             >;
         };
