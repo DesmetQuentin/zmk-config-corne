@@ -20,17 +20,6 @@
      *  board overlay and adjust if necessary.
      * ========================================================== */
 
-    behaviors {
-        /* Macro that presses Alt, taps Tab, then releases Alt */
-    };
-
-    combos {
-        alt_tab_combo {
-            timeout-ms = <60>;          /* 60 ms window for combo detection */
-            key-positions = <3 1 0 0>;  /* <Lower row col> <Tab row col>  */
-            bindings = <&alt_tab>;      /* Runs the macro above           */
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
