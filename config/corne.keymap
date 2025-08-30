@@ -22,13 +22,6 @@
 
     behaviors {
         /* Macro that presses Alt, taps Tab, then releases Alt */
-
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro";
-            label = "ALT_TAB_MACRO";
-            #binding-cells = <0>;
-            bindings = <&kp LALT &kp TAB>;
-        };
     };
 
     combos {
@@ -37,9 +30,6 @@
             key-positions = <3 1 0 0>;  /* <Lower row col> <Tab row col>  */
             bindings = <&alt_tab>;      /* Runs the macro above           */
         };
-    };
-
-    macros {
     };
 
     keymap {
@@ -57,7 +47,7 @@
 &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp SQT     &kp BSPC  &kp T      &kp Y      &kp U  &kp I  &kp ASTERISK
 &kp MINUS  &kp P  &kp S  &kp A  &kp D  &kp FSLH    &kp BSLH  &kp G      &kp H      &kp J  &kp K  &kp SEMI
 &kp COMMA  &kp L  &kp Z  &kp X  &kp C  &kp F       &kp O     &kp V      &kp B      &kp N  &kp M  &kp DOT
-                         &mo 4  &mo 1  &mo 5       &kp RET   &kp SPACE  &kp UNDER
+                         &mo 5  &mo 1  &mo 4       &kp RET   &kp SPACE  &kp UNDER
             >;
         };
 
@@ -70,10 +60,10 @@
              * ------------------------------------------------------------- */
 
             bindings = <
-&kp TAB       &kp LS(Q)  &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(DQT)      &kp BSPC      &kp LS(T)  &kp LS(Y)  &kp LS(U)  &kp LS(I)  &kp LS(POUND)
-&kp LS(DLLR)  &kp LS(P)  &kp LS(A)  &kp LS(S)  &kp LS(D)  &kp LS(PRCNT)    &kp LS(AMPS)  &kp LS(G)  &kp LS(H)  &kp LS(J)  &kp LS(K)  &kp LS(COLON)
-&kp LS(EXCL)  &kp LS(L)  &kp LS(Z)  &kp LS(X)  &kp LS(C)  &kp LS(F)        &kp LS(O)     &kp LS(V)  &kp LS(B)  &kp LS(N)  &kp LS(M)  &kp LS(QMARK)
-                                    &tog 2     &trans     &tog 6           &kp RET       &kp SPACE  &kp AT
+&kp TAB          &kp LS(Q)  &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp DQT        &kp BSPC   &kp LS(T)  &kp LS(Y)  &kp LS(U)  &kp LS(I)  &kp HASH
+&kp DOLLAR       &kp LS(P)  &kp LS(A)  &kp LS(S)  &kp LS(D)  &kp PERCENT    &kp AMPS   &kp LS(G)  &kp LS(H)  &kp LS(J)  &kp LS(K)  &kp COLON
+&kp EXCLAMATION  &kp LS(L)  &kp LS(Z)  &kp LS(X)  &kp LS(C)  &kp LS(F)      &kp LS(O)  &kp LS(V)  &kp LS(B)  &kp LS(N)  &kp LS(M)  &kp QUESTION
+                                       &tog 2     &trans     &tog 6         &kp RET    &kp SPACE  &kp AT
             >;
         };
 
@@ -106,10 +96,10 @@
 
         french {
             bindings = <
-&kp TAB  &trans  &trans  &trans  &trans  &trans    &kp BSPC    &trans     &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans    &kp RETURN  &kp SPACE  &trans
+&kp TAB  &trans  &trans  &trans  &trans  &trans    &kp DELETE  &trans     &kp E_ACUTE     &kp E_GRAVE  &trans         &kp DEAD_DIAERESIS
+&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &kp A_GRAVE     &kp U_GRAVE  &kp C_CEDILLA  &kp DEAD_CIRCUMFLEX
+&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans          &trans       &trans         &trans
+                         &trans  &trans  &trans    &kp RETURN  &kp SPACE  &kp LEFT_SHIFT
             >;
         };
 
