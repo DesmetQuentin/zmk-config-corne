@@ -21,6 +21,54 @@
      *  board overlay and adjust if necessary.
      * ========================================================== */
 
+    combos {
+        compatible = "zmk,combos";
+
+        euro {
+            bindings = <&euro_v1>;
+            key-positions = <28 29>;
+            layers = <1>;
+        };
+
+        euro_v2 {
+            bindings = <&euro_v2>;
+            key-positions = <27 28>;
+            layers = <1>;
+        };
+    };
+
+    macros {
+        euro_v1: euro_v1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N0 &kp A &kp C &kp SPACE>;
+
+            label = "EURO_V1";
+        };
+
+        euro_v2: euro_v2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N0 &kp A &kp C>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "EURO_V2";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -58,19 +106,19 @@
 
         numerical_and_utils {
             bindings = <
-&kp TAB     &trans                &kp PG_DN  &kp UP    &kp PG_UP  &kp PRINTSCREEN      &kp BSPC   &kp N7     &kp N8  &kp N9  &kp EQUAL   &kp TILDE
+&kp TAB     &none                 &kp PG_DN  &kp UP    &kp PG_UP  &kp PRINTSCREEN      &kp BSPC   &kp N7     &kp N8  &kp N9  &kp EQUAL   &kp TILDE
 &kp ESCAPE  &kp C_BRIGHTNESS_INC  &kp LEFT   &kp DOWN  &kp RIGHT  &kp C_VOLUME_UP      &kp FSLH   &kp N4     &kp N5  &kp N6  &kp PLUS    &kp MINUS
-&trans      &kp C_BRIGHTNESS_DEC  &trans     &trans    &trans     &kp C_VOLUME_DOWN    &kp ASTRK  &kp N1     &kp N2  &kp N3  &kp KP_DOT  &kp CARET
-                                             &trans    &mo 3      &to 0                &kp RET    &kp SPACE  &kp N0
+&none       &kp C_BRIGHTNESS_DEC  &none      &none     &none      &kp C_VOLUME_DOWN    &kp ASTRK  &kp N1     &kp N2  &kp N3  &kp KP_DOT  &kp CARET
+                                             &none     &mo 3      &to 0                &kp RET    &kp SPACE  &kp N0
             >;
         };
 
         f_layer {
             bindings = <
-&trans  &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_NXT    &bt BT_PRV    &trans          &trans  &kp F7  &kp F8  &kp F9  &kp F12  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans
-&trans  &kp A         &kp B           &kp C         &kp D         &kp E           &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                      &trans        &trans        &trans          &trans  &trans  &trans
+&none  &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_NXT    &bt BT_PRV    &none           &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
+&none  &kp A         &kp B           &kp C         &kp D         &kp E           &none  &kp F1  &kp F2  &kp F3  &kp F10  &none
+                                     &none         &trans        &none           &none  &none   &none
             >;
         };
 
