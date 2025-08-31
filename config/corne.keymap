@@ -35,6 +35,18 @@
             key-positions = <27 28>;
             layers = <1>;
         };
+
+        at {
+            bindings = <&kp AT>;
+            key-positions = <37 41>;
+            layers = <0>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <37 29>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -81,10 +93,10 @@
              * ------------------------------------------------------------- */
 
             bindings = <
-&kp TAB    &kp B  &kp Y  &kp O  &kp U  &kp SQT      &kp BSPC  &kp L      &kp D      &kp W  &kp V  &kp Z
-&kp ASTRK  &kp C  &kp I  &kp E  &kp A  &kp COMMA    &kp DOT   &kp H      &kp T      &kp S  &kp N  &kp Q
-&kp FSLH   &kp G  &kp X  &kp J  &kp K  &kp MINUS    &kp SEMI  &kp R      &kp M      &kp F  &kp P  &kp BSLH
-                         &mo 5  &mo 1  &mo 4        &kp RET   &kp SPACE  &kp UNDER
+&kp TAB    &kp B  &kp Y  &kp O     &kp U       &kp SQT      &kp BSPC  &kp L      &kp D      &kp W  &kp V  &kp Z
+&kp ASTRK  &kp C  &kp I  &kp E     &kp A       &kp COMMA    &kp DOT   &kp H      &kp T      &kp S  &kp N  &kp Q
+&kp LCTRL  &kp G  &kp X  &kp J     &kp K       &kp MINUS    &kp SEMI  &kp R      &kp M      &kp F  &kp P  &kp BSLH
+                         &kp LALT  &kp LSHIFT  &mo 4        &kp RET   &kp SPACE  &kp UNDER
             >;
         };
 
