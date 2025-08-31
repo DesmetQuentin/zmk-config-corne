@@ -40,11 +40,34 @@
             bindings = <&kp AT>;
             key-positions = <37 41>;
             layers = <0>;
+            timeout-ms = <50>;
         };
 
         dollar {
             bindings = <&kp DOLLAR>;
             key-positions = <37 29>;
+            layers = <0>;
+            timeout-ms = <100>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <37 12>;
+            timeout-ms = <150>;
+            layers = <0>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <37 30>;
+            timeout-ms = <200>;
+            layers = <0>;
+        };
+
+        excl {
+            bindings = <&kp EXCL>;
+            key-positions = <37 35>;
+            timeout-ms = <300>;
             layers = <0>;
         };
     };
