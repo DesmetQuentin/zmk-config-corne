@@ -35,7 +35,7 @@
             bindings = <
 &kp TAB    &kp B  &kp Y  &kp O  &kp U  &kp SQT      &kp BSPC  &kp L      &kp D      &kp W  &kp V  &kp Z
 &kp ASTRK  &kp C  &kp I  &kp E  &kp A  &kp COMMA    &kp DOT   &kp H      &kp T      &kp S  &kp N  &kp Q
-&kp FSLH   &kp G  &kp X  &kp J  &kp K  &kp MINUS    &kp SEMI  &kp B      &kp M      &kp F  &kp P  &kp BSLH
+&kp FSLH   &kp G  &kp X  &kp J  &kp K  &kp MINUS    &kp SEMI  &kp R      &kp M      &kp F  &kp P  &kp BSLH
                          &mo 5  &mo 1  &mo 4        &kp RET   &kp SPACE  &kp UNDER
             >;
         };
@@ -49,7 +49,7 @@
              * ------------------------------------------------------------- */
 
             bindings = <
-&kp LS(TAB)      &kp LS(B)  &kp LS(Y)  &kp LS(O)  &kp LS(U)  &kp DQT        &kp LS(BSPC)  &kp LS(L)      &kp LS(D)  &kp LS(W)  &kp LS(V)  &kp LS(Z)
+&kp LS(TAB)      &kp LS(B)  &kp LS(Y)  &kp LS(O)  &kp LS(U)  &kp DQT        &kp LA(BSPC)  &kp LS(L)      &kp LS(D)  &kp LS(W)  &kp LS(V)  &kp LS(Z)
 &kp HASH         &kp LS(C)  &kp LS(I)  &kp LS(E)  &kp LS(A)  &kp PERCENT    &kp AMPS      &kp LS(H)      &kp LS(T)  &kp LS(S)  &kp LS(N)  &kp LS(Q)
 &kp EXCLAMATION  &kp LS(G)  &kp LS(X)  &kp LS(J)  &kp LS(K)  &kp DOLLAR     &kp COLON     &kp LS(R)      &kp LS(M)  &kp LS(F)  &kp LS(P)  &kp QUESTION
                                        &mo 6      &trans     &tog 2         &kp LS(RET)   &kp LS(SPACE)  &kp AT
