@@ -26,41 +26,29 @@
 
         euro {
             bindings = <&euro_v1>;
-            key-positions = <28 29>;
-            layers = <1>;
-        };
-
-        euro_v2 {
-            bindings = <&euro_v2>;
-            key-positions = <27 28>;
-            layers = <1>;
+            key-positions = <28 29 37>;
+            layers = <0>;
+            timeout-ms = <300>;
         };
 
         at {
             bindings = <&kp AT>;
             key-positions = <37 41>;
             layers = <0>;
-            timeout-ms = <50>;
+            timeout-ms = <300>;
         };
 
         dollar {
             bindings = <&kp DOLLAR>;
             key-positions = <37 29>;
             layers = <0>;
-            timeout-ms = <100>;
+            timeout-ms = <300>;
         };
 
         hash {
             bindings = <&kp HASH>;
             key-positions = <37 12>;
-            timeout-ms = <150>;
-            layers = <0>;
-        };
-
-        colon {
-            bindings = <&kp COLON>;
-            key-positions = <37 30>;
-            timeout-ms = <200>;
+            timeout-ms = <300>;
             layers = <0>;
         };
 
@@ -68,6 +56,49 @@
             bindings = <&kp EXCL>;
             key-positions = <37 35>;
             timeout-ms = <300>;
+            layers = <0>;
+        };
+
+        prcnt {
+            bindings = <&kp PRCNT>;
+            key-positions = <37 17>;
+            timeout-ms = <300>;
+            layers = <0>;
+        };
+
+        amps {
+            bindings = <&kp AMPS>;
+            key-positions = <37 18>;
+            timeout-ms = <300>;
+            layers = <0>;
+        };
+
+        toggle_bt {
+            bindings = <&tog 4>;
+            key-positions = <38 39>;
+            layers = <0>;
+        };
+
+        toggle_func {
+            bindings = <&tog 3>;
+            key-positions = <37 40>;
+            layers = <0>;
+        };
+
+        toggle_num {
+            bindings = <&tog 2>;
+            key-positions = <36 41>;
+            layers = <0>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
+
+        elipsis {
+            bindings = <&elipsis>;
+            key-positions = <18 19 20>;
             layers = <0>;
         };
     };
@@ -89,18 +120,12 @@
             label = "EURO_V1";
         };
 
-        euro_v2: euro_v2 {
+        elipsis: elipsis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N2 &kp KP_N0 &kp A &kp C>,
-                <&macro_release>,
-                <&kp LALT>;
+            bindings = <&macro_tap>, <&kp DOT &kp DOT &kp DOT>;
 
-            label = "EURO_V2";
+            label = "ELIPSIS";
         };
     };
 
@@ -119,68 +144,43 @@
 &kp TAB    &kp B  &kp Y  &kp O     &kp U       &kp SQT      &kp BSPC  &kp L      &kp D      &kp W  &kp V  &kp Z
 &kp ASTRK  &kp C  &kp I  &kp E     &kp A       &kp COMMA    &kp DOT   &kp H      &kp T      &kp S  &kp N  &kp Q
 &kp LCTRL  &kp G  &kp X  &kp J     &kp K       &kp MINUS    &kp SEMI  &kp R      &kp M      &kp F  &kp P  &kp BSLH
-                         &kp LALT  &kp LSHIFT  &mo 4        &kp RET   &kp SPACE  &kp UNDER
-            >;
-        };
-
-        shift_engram {
-            /* -------------------------------------------------------------
-             * |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC|
-             * | CTRL |     |     |     |     |  ~  |   |  -  |  =  |  [  |  ]  |  \  |  `  |
-             * | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  "  |
-             *                    | GUI |     | SPC |   | ENT |     | ALT |
-             * ------------------------------------------------------------- */
-
-            bindings = <
-&kp LS(TAB)      &kp LS(B)  &kp LS(Y)  &kp LS(O)  &kp LS(U)  &kp DQT        &kp LA(BSPC)  &kp LS(L)      &kp LS(D)  &kp LS(W)  &kp LS(V)  &kp LS(Z)
-&kp HASH         &kp LS(C)  &kp LS(I)  &kp LS(E)  &kp LS(A)  &kp PERCENT    &kp AMPS      &kp LS(H)      &kp LS(T)  &kp LS(S)  &kp LS(N)  &kp LS(Q)
-&kp EXCLAMATION  &kp LS(G)  &kp LS(X)  &kp LS(J)  &kp LS(K)  &kp DOLLAR     &kp COLON     &kp LS(R)      &kp LS(M)  &kp LS(F)  &kp LS(P)  &kp QUESTION
-                                       &mo 6      &trans     &tog 2         &kp LS(RET)   &kp LS(SPACE)  &kp AT
-            >;
-        };
-
-        numerical_and_utils {
-            bindings = <
-&kp TAB     &none                 &kp PG_DN  &kp UP    &kp PG_UP  &kp PRINTSCREEN      &kp BSPC   &kp N7     &kp N8  &kp N9  &kp EQUAL   &kp TILDE
-&kp ESCAPE  &kp C_BRIGHTNESS_INC  &kp LEFT   &kp DOWN  &kp RIGHT  &kp C_VOLUME_UP      &kp FSLH   &kp N4     &kp N5  &kp N6  &kp PLUS    &kp MINUS
-&none       &kp C_BRIGHTNESS_DEC  &none      &none     &none      &kp C_VOLUME_DOWN    &kp ASTRK  &kp N1     &kp N2  &kp N3  &kp KP_DOT  &kp CARET
-                                             &none     &mo 3      &to 0                &kp RET    &kp SPACE  &kp N0
-            >;
-        };
-
-        f_layer {
-            bindings = <
-&none  &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_NXT    &bt BT_PRV    &none           &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
-&none  &kp A         &kp B           &kp C         &kp D         &kp E           &none  &kp F1  &kp F2  &kp F3  &kp F10  &none
-                                     &none         &trans        &none           &none  &none   &none
+                         &kp LALT  &kp LSHIFT  &mo 1        &kp RET   &kp SPACE  &kp UNDER
             >;
         };
 
         symbols {
             bindings = <
-&kp GRAVE       &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                  &kp DEL                &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-&kp LEFT_BRACE  &kp LC(A)  &kp LC(F)  &kp LC(H)  &kp LC(L)  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PG_DN  &kp UP     &kp PG_UP  &kp END    &kp RIGHT_BRACE
-&kp LESS_THAN   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp LEFT   &kp DOWN   &kp RIGHT  &kp TILDE  &kp GREATER_THAN
-                                      &kp LC(Y)  &kp PIPE   &trans                  &kp LC(RET)            &kp PLUS   &kp EQUAL
+&kp GRAVE       &kp N1    &kp N2     &kp N3    &kp N4     &kp N5                  &kp DEL                &kp N6     &kp N7     &kp N8    &kp N9    &kp N0
+&kp LEFT_BRACE  &kp BSLH  &kp PG_DN  &kp UP    &kp PG_UP  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PLUS   &kp CARET  &none     &kp FSLH  &kp RIGHT_BRACE
+&trans          &kp LT    &kp LEFT   &kp DOWN  &kp RIGHT  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp MINUS  &kp EQUAL  &kp PIPE  &kp GT    &kp TILDE
+                                     &trans    &trans     &trans                  &none                  &none      &none
             >;
         };
 
-        french {
+        numerical_and_utils {
             bindings = <
-&kp TAB  &trans  &trans  &trans  &trans  &trans    &kp DELETE  &trans     &trans          &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans          &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans      &trans     &trans          &trans  &trans  &trans
-                         &trans  &trans  &trans    &kp RETURN  &kp SPACE  &kp LEFT_SHIFT
+&trans  &none          &none      &none     &kp PRINTSCREEN  &none           &trans     &kp N7  &kp N8  &kp N9  &kp EQUAL   &kp TILDE
+&none   &kp C_BRI_INC  &kp PG_DN  &kp UP    &kp PG_UP        &kp C_VOL_UP    &kp FSLH   &kp N4  &kp N5  &kp N6  &kp PLUS    &kp MINUS
+&trans  &kp C_BRI_DEC  &kp LEFT   &kp DOWN  &kp RIGHT        &kp C_VOL_DN    &kp ASTRK  &kp N1  &kp N2  &kp N3  &kp KP_DOT  &kp CARET
+                                  &trans    &trans           &to 0           &trans     &trans  &kp N0
             >;
         };
 
-        bonus {
+        func {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &tog 0    &trans  &trans  &trans
+&none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &none  &kp F6  &kp F7  &kp F8  &kp F9   &kp F10
+&none  &none   &none   &none   &none   &none     &none  &none   &none   &none   &kp F11  &kp F12
+&none  &none   &none   &none   &none   &none     &none  &none   &none   &none   &none    &none
+                       &none   &none   &to 0     &none  &none   &none
+            >;
+        };
+
+        bt {
+            bindings = <
+&none  &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_NXT    &bt BT_PRV    &none           &trans  &trans  &trans  &trans  &trans  &trans
+&none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
+&none  &none         &none           &none         &none         &none           &trans  &trans  &trans  &trans  &trans  &trans
+                                     &none         &none         &to 0           &trans  &trans  &trans
             >;
         };
     };
