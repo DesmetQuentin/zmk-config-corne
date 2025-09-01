@@ -133,10 +133,10 @@
 
         symbols {
             bindings = <
-&kp GRAVE       &kp N1     &kp N2     &kp N3    &kp N4     &kp N5                  &kp DEL                &kp N6     &kp N7     &kp N8    &kp N9    &kp N0
-&kp LEFT_BRACE  &kp BSLH   &kp PG_DN  &kp UP    &kp PG_UP  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PLUS   &kp CARET  &none     &kp FSLH  &kp RIGHT_BRACE
-&trans          &kp PRCNT  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp MINUS  &kp EQUAL  &kp PIPE  &kp AMPS  &kp TILDE
-                                      &trans    &trans     &trans                  &none                  &none      &none
+&kp GRAVE       &kp N1    &kp N2     &kp N3    &kp N4     &kp N5                  &kp DEL                &kp N6     &kp N7     &kp N8     &kp N9    &kp N0
+&kp LEFT_BRACE  &kp BSLH  &kp PG_DN  &kp UP    &kp PG_UP  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PLUS   &kp CARET  &kp PRCNT  &kp FSLH  &kp RIGHT_BRACE
+&trans          &kp PIPE  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp MINUS  &kp EQUAL  &kp AMPS   &none     &kp TILDE
+                                     &trans    &trans     &trans                  &trans                 &trans     &none
             >;
         };
 
