@@ -76,19 +76,16 @@
         toggle_bt {
             bindings = <&tog 4>;
             key-positions = <38 39>;
-            layers = <0>;
         };
 
         toggle_func {
             bindings = <&tog 3>;
-            key-positions = <37 40>;
-            layers = <0>;
+            key-positions = <37 36 38>;
         };
 
         toggle_num {
             bindings = <&tog 2>;
             key-positions = <36 41>;
-            layers = <0>;
         };
 
         esc {
@@ -143,7 +140,7 @@
             bindings = <
 &kp TAB    &kp B  &kp Y  &kp O     &kp U       &kp SQT      &kp BSPC  &kp L      &kp D      &kp W  &kp V  &kp Z
 &kp ASTRK  &kp C  &kp I  &kp E     &kp A       &kp COMMA    &kp DOT   &kp H      &kp T      &kp S  &kp N  &kp Q
-&kp LCTRL  &kp G  &kp X  &kp J     &kp K       &kp MINUS    &kp SEMI  &kp R      &kp M      &kp F  &kp P  &kp BSLH
+&kp LCTRL  &kp G  &kp X  &kp J     &kp K       &kp MINUS    &kp SEMI  &kp R      &kp M      &kp F  &kp P  &kp QUESTION
                          &kp LALT  &kp LSHIFT  &mo 1        &kp RET   &kp SPACE  &kp UNDER
             >;
         };
